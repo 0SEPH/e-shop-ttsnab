@@ -1,0 +1,21 @@
+{% extends "layout/basic.html" %}
+
+{% block card %}
+{% for product in products %}
+<div class="col-md-3">
+    <div class="product">
+    <div class="image">
+        <img src="http://place-hold.it/300x400" alt="">
+    </div>
+    <div class="info">
+        <h3>{{product.title}}</h3>
+        <h2>{{product.type}}</h2>
+        <div class="price-info">
+            <span class="price">{{product.price}}<small>₽</small></span>
+            <button class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></button>
+        </div>  
+    </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

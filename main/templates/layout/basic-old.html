@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'product_card/css/product_card.css' %}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'product_card/libs/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main-css/main-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'product_card/css/test.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'menu/top-menu.css' %}">
+    <script src="{% static 'menu/menu.js' %}" defer></script>
+    <title>{{block.title}} Главная {{endblock}}</title>
+</head>
+<body>
+<!-- Menu_Latest -->
+
+
+<div class="header">
+    <div class="dropdown" data-dropdown>
+        <button class="link" data-dropdown-button>Information</button>
+        <div class="dropdown-menu">
+            Dropdown Content <br>
+            fdfesfsefesgsg<br>
+            Gegsegsge<br>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="#"><button class="link">КАТАЛОГ ТОВАРОВ</button></a>
+    </div>
+</div>
+
+<!-- <div class="menu1">
+    <div class="header-menu-text">
+    Menu Item <div class="down-arrow">></div></div>
+    <ul>
+        <li>Dropdown 1</li>
+        <li>Dropdown 2</li>
+        <li>Dropdown 3</li>
+        <li>Dropdown 4</li>
+        <li>Dropdown 5</li>
+    </ul>
+</div> -->
+<nav class="left-menu">  
+    {% for type in type %}
+    <a href="#">{{type.name}}</a>
+    {% endfor %}
+</nav>
+
+
+
+
+<!-- Main content block -->
+    <section>
+        <!-- Product card -->
+        <!-- <div class="container mt-5">
+            <div class="row">
+                {% block card %}
+                {% endblock %}
+            </div>
+        </div> -->
+        {% block content %}
+        {% endblock %}
+    </section>
+
+    <!-- <div class="product-card">
+        
+        <img src="{% static 'img/200x200.png' %}" alt="" class="product-img">
+        <div class="product-info">
+            <p class="product-name">123 <br></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <p class="product-model">Ду-234-123Бв</p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="product-model">Ду-234-123Бв</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="chekbox" value="Еще..."></button>
+    </div>
+    </div> -->
+</body>
+</html>
